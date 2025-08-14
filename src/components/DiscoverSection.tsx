@@ -1,7 +1,7 @@
 import { RefreshCw, Sparkles, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import LoadingAnimation from './LoadingAnimation';
+import AnimeLoadingAnimation from './AnimeLoadingAnimation';
 import AnimeCard from './AnimeCard';
 
 interface FilterState {
@@ -81,7 +81,7 @@ const DiscoverSection = ({
       </div>
 
       {/* Content Area */}
-      {loading && <LoadingAnimation />}
+      {loading && <AnimeLoadingAnimation />}
 
       {/* Exhausted Message */}
       {isExhausted && (
