@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 import { Checkbox } from '@/components/ui/checkbox';
-import sugoiLogo from '/lovable-uploads/c5d95c0b-670b-4b65-95d9-923622835f4b.png';
+import sugoiLogo from '/lovable-uploads/sugoipick-logo1.png';
 
 interface Genre {
   mal_id: number;
