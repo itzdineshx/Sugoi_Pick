@@ -199,18 +199,21 @@ const Header = ({ genres = [], filters, onFiltersChange, onResetFilters, favorit
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-xl">
-      <div className="flex items-center space-x-2 sm:space-x-3">
-        <div className="relative">
-          <img 
-            src={sugoiLogo} 
-            alt="SugoiPick Logo" 
-            className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
-          />
-        </div>
-        <span className="font-cinema text-xl sm:text-2xl text-red-600 tracking-wider">
-          SugoiPick
-        </span>
-      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo Section */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="relative">
+              <img 
+                src={sugoiLogo} 
+                alt="SugoiPick Logo" 
+                className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+              />
+            </div>
+            <span className="font-cinema text-xl sm:text-2xl text-red-600 tracking-wider">
+              Sugoi Pick
+            </span>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
