@@ -241,10 +241,13 @@ const Header = ({ genres = [], filters, onFiltersChange, onResetFilters, favorit
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-[500px] bg-popover border-border z-50" align="end">
-                <div className="space-y-4 max-h-[600px] overflow-y-auto">
-                  <div className="flex items-center justify-between sticky top-0 bg-popover pb-2 border-b border-border/20">
-                    <h3 className="font-semibold">Advanced Filters</h3>
+              <PopoverContent className="w-[520px] bg-popover/95 backdrop-blur-md border-border/50 z-50 sophisticated-card" align="end">
+                <div className="space-y-5 max-h-[650px] overflow-y-auto scroll-smooth">
+                  <div className="flex items-center justify-between sticky top-0 bg-popover/95 backdrop-blur-md pb-3 border-b border-border/30 z-10">
+                    <h3 className="font-semibold text-primary flex items-center gap-2">
+                      <Filter className="w-4 h-4" />
+                      Advanced Filters
+                    </h3>
                     {activeFiltersCount > 0 && onResetFilters && (
                       <Button
                         variant="ghost"
@@ -447,46 +450,86 @@ const Header = ({ genres = [], filters, onFiltersChange, onResetFilters, favorit
                   </div>
 
                   {/* Genres Filter */}
-                  <div className="space-y-2">
-                    <Label className="text-sm font-medium">
-                      Genres {selectedGenres.length > 0 && `(${selectedGenres.length})`}
-                    </Label>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <Label className="text-sm font-medium flex items-center gap-2">
+                        🎭 Genres {selectedGenres.length > 0 && `(${selectedGenres.length} selected)`}
+                      </Label>
+                      {selectedGenres.length > 0 && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => onFiltersChange && filters && onFiltersChange({ ...filters, genres: [] })}
+                          className="h-6 px-2 text-xs text-muted-foreground hover:text-primary"
+                        >
+                          Clear All
+                        </Button>
+                      )}
+                    </div>
                     
-                    {/* Selected Genres */}
+                    {/* Selected Genres Display */}
                     {selectedGenres.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mb-2">
-                        {selectedGenres.map((genre) => (
-                          <Badge
-                            key={genre.mal_id}
-                            variant="default"
-                            className="text-xs cursor-pointer hover:bg-primary/80 h-5 px-2"
-                            onClick={() => handleGenreToggle(genre.mal_id)}
-                          >
-                            {genre.name}
-                            <X className="w-2 h-2 ml-1" />
-                          </Badge>
-                        ))}
+                      <div className="sophisticated-card p-3 space-y-2">
+                        <p className="text-xs text-muted-foreground font-medium">Selected:</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {selectedGenres.map((genre) => (
+                            <Badge
+                              key={genre.mal_id}
+                              variant="default"
+                              className="text-xs cursor-pointer elegant-glow hover:scale-105 transition-all duration-200 px-2.5 py-1 bg-gradient-to-r from-primary to-primary-glow border-0"
+                              onClick={() => handleGenreToggle(genre.mal_id)}
+                            >
+                              {genre.name}
+                              <X className="w-3 h-3 ml-1.5 hover:scale-110 transition-transform" />
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
                     )}
 
-                    {/* Genre Selection */}
-                    <div className="grid grid-cols-3 gap-2 max-h-32 overflow-y-auto text-xs border border-border/20 rounded p-2">
-                      {genres.map((genre) => (
-                        <div key={genre.mal_id} className="flex items-center space-x-2">
-                          <Checkbox
-                            id={`genre-${genre.mal_id}`}
-                            checked={filters?.genres.includes(genre.mal_id) || false}
-                            onCheckedChange={() => handleGenreToggle(genre.mal_id)}
-                            className="border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary h-3 w-3"
-                          />
-                          <Label
-                            htmlFor={`genre-${genre.mal_id}`}
-                            className="text-xs cursor-pointer hover:text-primary transition-colors leading-tight"
-                          >
-                            {genre.name}
-                          </Label>
+                    {/* Genre Selection Grid */}
+                    <div className="space-y-2">
+                      <div className="sophisticated-card p-3 max-h-48 overflow-y-auto">
+                        <div className="grid grid-cols-2 gap-2.5">
+                          {genres.map((genre) => {
+                            const isSelected = filters?.genres.includes(genre.mal_id) || false;
+                            return (
+                              <div 
+                                key={genre.mal_id} 
+                                className={`flex items-center space-x-2.5 p-2 rounded-lg transition-all duration-200 cursor-pointer group hover:bg-primary/10 ${
+                                  isSelected ? 'bg-primary/20 border border-primary/30' : 'hover:border border-border/40'
+                                }`}
+                                onClick={() => handleGenreToggle(genre.mal_id)}
+                              >
+                                <div className="relative">
+                                  <Checkbox
+                                    id={`genre-${genre.mal_id}`}
+                                    checked={isSelected}
+                                    onCheckedChange={() => handleGenreToggle(genre.mal_id)}
+                                    className={`border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary h-4 w-4 transition-all duration-200 ${
+                                      isSelected ? 'elegant-glow scale-110' : 'group-hover:border-primary/50'
+                                    }`}
+                                  />
+                                  {isSelected && (
+                                    <div className="absolute -inset-1 bg-primary/20 rounded-full animate-ping" />
+                                  )}
+                                </div>
+                                <Label
+                                  htmlFor={`genre-${genre.mal_id}`}
+                                  className={`text-xs cursor-pointer transition-all duration-200 leading-relaxed font-medium ${
+                                    isSelected ? 'text-primary-foreground' : 'text-foreground group-hover:text-primary'
+                                  }`}
+                                >
+                                  {genre.name}
+                                </Label>
+                              </div>
+                            );
+                          })}
                         </div>
-                      ))}
+                      </div>
+                      <p className="text-xs text-muted-foreground text-center italic">
+                        💡 Click on genres to add/remove them from your filters
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -657,26 +700,77 @@ const Header = ({ genres = [], filters, onFiltersChange, onResetFilters, favorit
                       />
                     </div>
 
-                    {/* Mobile Genre Selection - Simplified */}
-                    <div className="space-y-2">
-                      <Label>Popular Genres</Label>
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        {genres.slice(0, 12).map((genre) => (
-                          <div key={genre.mal_id} className="flex items-center space-x-2">
-                            <Checkbox
-                              id={`mobile-genre-${genre.mal_id}`}
-                              checked={filters?.genres.includes(genre.mal_id) || false}
-                              onCheckedChange={() => handleGenreToggle(genre.mal_id)}
-                              className="border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary h-3 w-3"
-                            />
-                            <Label
-                              htmlFor={`mobile-genre-${genre.mal_id}`}
-                              className="text-xs cursor-pointer hover:text-primary transition-colors leading-tight"
+                    {/* Mobile Genre Selection */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <Label className="flex items-center gap-2">
+                          🎭 Genres {selectedGenres.length > 0 && `(${selectedGenres.length})`}
+                        </Label>
+                        {selectedGenres.length > 0 && (
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => onFiltersChange && filters && onFiltersChange({ ...filters, genres: [] })}
+                            className="h-6 px-2 text-xs"
+                          >
+                            Clear
+                          </Button>
+                        )}
+                      </div>
+                      
+                      {/* Selected Genres for Mobile */}
+                      {selectedGenres.length > 0 && (
+                        <div className="flex flex-wrap gap-1">
+                          {selectedGenres.map((genre) => (
+                            <Badge
+                              key={genre.mal_id}
+                              variant="default"
+                              className="text-xs cursor-pointer h-6 px-2 bg-primary hover:bg-primary/80"
+                              onClick={() => handleGenreToggle(genre.mal_id)}
                             >
                               {genre.name}
-                            </Label>
-                          </div>
-                        ))}
+                              <X className="w-2 h-2 ml-1" />
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                      
+                      {/* Popular Genres Grid */}
+                      <div className="sophisticated-card p-3 max-h-32 overflow-y-auto">
+                        <div className="grid grid-cols-2 gap-2">
+                          {genres.slice(0, 16).map((genre) => {
+                            const isSelected = filters?.genres.includes(genre.mal_id) || false;
+                            return (
+                              <div 
+                                key={genre.mal_id} 
+                                className={`flex items-center space-x-2 p-1.5 rounded transition-all cursor-pointer ${
+                                  isSelected ? 'bg-primary/20' : 'hover:bg-primary/10'
+                                }`}
+                                onClick={() => handleGenreToggle(genre.mal_id)}
+                              >
+                                <Checkbox
+                                  id={`mobile-genre-${genre.mal_id}`}
+                                  checked={isSelected}
+                                  onCheckedChange={() => handleGenreToggle(genre.mal_id)}
+                                  className="border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary h-3 w-3"
+                                />
+                                <Label
+                                  htmlFor={`mobile-genre-${genre.mal_id}`}
+                                  className={`text-xs cursor-pointer transition-colors leading-tight ${
+                                    isSelected ? 'text-primary font-medium' : 'hover:text-primary'
+                                  }`}
+                                >
+                                  {genre.name}
+                                </Label>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        {genres.length > 16 && (
+                          <p className="text-xs text-muted-foreground text-center mt-2 italic">
+                            Showing popular genres
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>
