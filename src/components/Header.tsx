@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Search, Bookmark, Filter, RotateCcw } from 'lucide-react';
+import { Menu, X, Search, Bookmark, Filter, RotateCcw, HomeIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -114,7 +114,7 @@ const Header = ({ genres = [], filters, onFiltersChange, onResetFilters, favorit
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const navItems = [
-    { label: 'Discover', href: '#discover', icon: Search },
+    { label: 'Home', href: '/', icon: HomeIcon },
     { label: 'Favorites', href: '#favorites', icon: Bookmark },
   ];
 

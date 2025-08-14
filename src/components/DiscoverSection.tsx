@@ -44,13 +44,6 @@ const DiscoverSection = ({
 }: DiscoverSectionProps) => {
   return (
     <section id="discover" className="space-y-6 sm:space-y-8">
-      <div className="text-center space-y-2 sm:space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-bold">Discover Anime</h2>
-        <p className="text-sm sm:text-base text-muted-foreground px-4">
-          Use the filters in the navbar to customize your search
-        </p>
-      </div>
-
       {/* Discover Button */}
       <div className="flex justify-center px-4">
         <Button
