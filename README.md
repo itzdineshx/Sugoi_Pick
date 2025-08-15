@@ -1,23 +1,23 @@
-# 🍥 AniePick
+# 🍥 SugoiPick
 
-AniePick is a red-and-black themed anime recommendation app powered by the **Jikan API** (MyAnimeList data).  
-It helps you discover random anime series or movies with filters for genre, year, and more — no endless searching required.
+SugoiPick is a red-and-black themed anime recommendation app powered by the **Jikan API** (MyAnimeList data).  
+It helps you discover random anime series or movies, with filters for genre, year, and more — no endless searching required.
 
 ---
 
 ## 🌟 Features
 
 - 🎯 **Random Anime Discovery** – Get a completely new anime suggestion every time you visit.
-- 🎨 **Anime-Themed UI** – Red & black color palette with Japanese-inspired fonts and styling.
+- 🎨 **Anime-Themed UI** – Red & black color palette with Japanese-inspired fonts.
 - 📱 **Responsive Design** – Optimized for desktop, tablet, and mobile.
 - 📄 **Detailed Info** – Title, synopsis, genres, episode count, score, and poster image.
-- ❤️ **Favorites** – Save anime to your personal watchlist (stored locally).
+- ❤️ **Favorites** – Save anime to your personal watchlist (local storage).
 - 🔍 **Filtering** – Narrow results by genre, year, or type (TV, OVA, Movie, etc.).
 
 ---
 
 ## 🖼 Preview
-![AniePick Screenshot](./aniepick.png)
+![SugoiPick Screenshot](./sugoipick.png)
 
 ---
 
@@ -34,8 +34,8 @@ It helps you discover random anime series or movies with filters for genre, year
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/aniepick.git
-   cd aniepick
+   git clone https://github.com/yourusername/sugoipick.git
+   cd sugoipick
    ````
 
 2. **Install dependencies** (if using React)
@@ -46,7 +46,7 @@ It helps you discover random anime series or movies with filters for genre, year
 
 3. **No API key required**
 
-   * AniePick uses the free **Jikan API**, so no signup is necessary.
+   * SugoiPick uses the free **Jikan API**, so no signup is necessary.
    * API Base URL: `https://api.jikan.moe/v4/`
 
 4. **Run the app locally**
@@ -73,8 +73,7 @@ This project is licensed under the MIT License.
 
 * **Jikan API** for anime data from MyAnimeList.
 * **Google Fonts** for typography.
-* **Brand Family** – AniePick is part of the “Pick” brand alongside CinePick and MeloPick.
+* **Brand Family** – SugoiPick is part of the “Pick” brand alongside CinePick and MeloPick.
 
+That would make the GitHub repos look premium.
 ```
-
----
