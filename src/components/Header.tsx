@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 import { Checkbox } from '@/components/ui/checkbox';
-import sugoiLogo from '/lovable-uploads/sugoipick-logo1.png';
+import AnieLogo from '/lovable-uploads/Aniepick-logo1.png';
 
 interface Genre {
   mal_id: number;
@@ -205,13 +205,13 @@ const Header = ({ genres = [], filters, onFiltersChange, onResetFilters, favorit
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="relative">
               <img 
-                src={sugoiLogo} 
-                alt="SugoiPick Logo" 
+                src={AnieLogo} 
+                alt="AniePick Logo" 
                 className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
               />
             </div>
             <span className="font-cinema text-xl sm:text-2xl text-red-600 tracking-wider">
-              Sugoi Pick
+              Anie Pick
             </span>
           </div>
 

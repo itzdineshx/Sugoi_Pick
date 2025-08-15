@@ -67,7 +67,7 @@ const SiteLoadingAnimation = ({ onLoadComplete }: SiteLoadingAnimationProps) => 
         <div className="text-center space-y-4">
           <div className="relative">
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-red-moon bg-clip-text text-transparent tracking-wider drop-shadow-lg">
-              SugoiPick
+              AniePick
             </h1>
             <div className="absolute -inset-2 bg-gradient-red-moon opacity-20 blur-xl rounded-full animate-pulse"></div>
           </div>

@@ -17,7 +17,7 @@ interface AnimeData {
   };
 }
 
-const FAVORITES_STORAGE_KEY = 'sugoipick_favorites';
+const FAVORITES_STORAGE_KEY = 'Aniepick_favorites';
 
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState<AnimeData[]>([]);

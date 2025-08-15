@@ -1,7 +1,7 @@
-# SugoiPick 🎴✨
+# AniePick 🎴✨
 
-**SugoiPick** is an anime-themed random recommendation web app.  
-Inspired by the style of *SuggestMeMovie*, SugoiPick helps you discover anime you might never have picked yourself.  
+**AniePick** is an anime-themed random recommendation web app.  
+Inspired by the style of *SuggestMeMovie*, AniePick helps you discover anime you might never have picked yourself.  
 It’s simple, fast, and 100% focused on anime — no login, no hassle.
 
 ---
@@ -23,7 +23,7 @@ It’s simple, fast, and 100% focused on anime — no login, no hassle.
 ---
 
 ## 🖼️ UI Theme
-- **Logo:** Custom-designed “SugoiPick” logo with anime eye emblem.
+- **Logo:** Custom-designed “AniePick” logo with anime eye emblem.
 - **Fonts:** Bold Japanese-style headings, clean sans-serif body text.
 - **Colors:** Sakura Pink, Midnight Indigo, and Gold accents.
 - **Background:** Faded anime scenery with optional parallax effect.
@@ -32,7 +32,7 @@ It’s simple, fast, and 100% focused on anime — no login, no hassle.
 ---
 
 ## 🔌 API
-SugoiPick uses the **[Jikan API](https://jikan.moe/)** for anime data, which fetches from MyAnimeList:
+AniePick uses the **[Jikan API](https://jikan.moe/)** for anime data, which fetches from MyAnimeList:
 - **Anime details:** Title, synopsis, genres, release date, rating, poster.
 - **Search filters:** Query by genre, score, year, and type.
 
