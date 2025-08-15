@@ -1,5 +1,7 @@
 # 🍥 SugoiPick
 
+![SugoiPick Screenshot](./sugoipick-logo1.png)
+
 SugoiPick is a red-and-black themed anime recommendation app powered by the **Jikan API** (MyAnimeList data).  
 It helps you discover random anime series or movies, with filters for genre, year, and more — no endless searching required.
 
